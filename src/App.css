@@ -1,38 +1,245 @@
-.App {
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+.hq-template{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	box-shadow: 7px 9px 50px 18px rgba(212, 230, 252, 1);
+
+}
+.panel-info {
+	text-align: center;
+}
+.panel-info h1{
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #59c1ef;
+  font-size: 3em;
   text-align: center;
+  padding-top: 30px;
+}
+.vaccination-logo{
+	width: inherit !important;
+}
+.panel-info p{
+  margin-bottom: 60px;
+  font-weight: bold;
+
+  color: #0d9500; 
+  font-size: 9em;
+  text-align: center;
+  font-family: revert;
+
+  font-size: bold;
+}
+.panel-info img{
+  width: 4em !important;
+  height: 4em;
+  margin-bottom: 2em;
+}
+.panel-info h2{
+  margin-bottom: 60px;
+  font-weight: bold;
+  color: #c0c0c0;
+  font-size: 2em;
+  text-align: center;
+  padding-top: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.register-form{
+	background-color: #59c1ef;
+	padding: 60px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.register-form h1{
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 50px;
+}
+.register-input{
+	padding-left: 40px;
+	border-radius: 20px;
+	border:none;
+}
+.register-input::placeholder{
+	color: #a4c9f7;
+	opacity: 1;
+}
+.register-form svg{
+	margin-top: -67px;
+    margin-left: 10px;
+    color: #a4c9f7;
+}
+.register-login-btn{
+	margin-top: 60px;
+	display: flex;
+}
+.register-login-btn .register-btn{
+	border-radius: 5px;
+	background: #0d9500;
+  border-color: #0d9500;
+	color: rgb(255, 255, 255) !important;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin: auto;
+  font-weight: bold;
+  width: 8em;
+  
+  font-size: 1.5em;
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+}
+.register-login-btn .register-btn:focus{
+	color: rgb(255, 255, 255) !important;
+
+	border:none !important;
 }
 
-.App-link {
-  color: #61dafb;
+.register-login-btn .login-btn{
+	border-radius: 20px;
+	background-color: transparent;
+	color: #fff !important;
+	
+	padding-left: 20px;
+	padding-right: 20px;
+	border: 1px solid #fff !important;
+}
+.register-login-btn .login-btn:focus{
+	color: #fff !important;
+	box-shadow: none !important;
+	border: 1px solid #fff !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.copyright{
+  text-align: center; 
+    padding: 20px;
+    font-size: 16px;
 }
+.copyright a{
+  color: #dddddd;
+  
+}
+.copyright a:hover{
+  color: #a1a1a1;
+}
+.panel-info img {
+  width: inherit;
+}
+
+
+
+
+
+/************************** media query 1200px ***********/
+@media only screen and (max-width: 1200px){
+	.panel-info img{
+		padding-top: 85px;
+	}
+}
+/************************** media query 950px ***********/
+@media only screen and (max-width: 950px){
+	.panel-info img{
+		height: inherit;
+		width: inherit;
+		padding-top: 0px;
+	}
+	.register-login-btn .register-btn {
+    margin-right: 5px;
+    font-size: 15px;
+}
+	.register-login-btn .login-btn {
+		font-size: 15px;
+    width: auto;
+	}
+
+}
+/********************  media query 750px ***************/
+@media only screen and (max-width: 750px){
+	.pic-register-2{
+		display: none;
+	}
+	.register-login-btn .register-btn{
+		margin: auto;
+    width: auto;
+	}
+}
+/********************  media query 414px ***************/
+@media only screen and (max-width: 414px){
+	.register-form{
+		padding: 10px;
+	}
+	
+}
+
+
+.bn54 {
+
+	outline: none;
+
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	text-transform: uppercase;
+	height: auto;
+	width: auto;
+	opacity: 1;
+	background-color: #ffffff;
+	border: white;
+  }
+  
+  .bn54 .bn54span {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: #000000;
+	font-size: 12px;
+	font-weight: 500;
+	letter-spacing: 0.7px;
+  }
+  
+  .bn54:hover {
+	animation: bn54rotate 0.7s ease-in-out both;
+  }
+  .bn54:focus {
+	outline: none;
+  }
+  .bn54:hover .bn54span {
+	animation: bn54storm 0.7s ease-in-out both;
+	animation-delay: 0.06s;
+  }
+  
+  @keyframes bn54rotate {
+	0% {
+	  transform: rotate(0deg) translate3d(0, 0, 0);
+	}
+	25% {
+	  transform: rotate(3deg) translate3d(0, 0, 0);
+	}
+	50% {
+	  transform: rotate(-3deg) translate3d(0, 0, 0);
+	}
+	75% {
+	  transform: rotate(1deg) translate3d(0, 0, 0);
+	}
+	100% {
+	  transform: rotate(0deg) translate3d(0, 0, 0);
+	}
+  }
+  
+  @keyframes bn54storm {
+	0% {
+	  transform: translate3d(0, 0, 0) translateZ(0);
+	}
+	25% {
+	  transform: translate3d(4px, 0, 0) translateZ(0);
+	}
+	50% {
+	  transform: translate3d(-3px, 0, 0) translateZ(0);
+	}
+	75% {
+	  transform: translate3d(2px, 0, 0) translateZ(0);
+	}
+	100% {
+	  transform: translate3d(0, 0, 0) translateZ(0);
+	}
+  }
