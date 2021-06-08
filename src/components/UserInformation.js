@@ -1,8 +1,13 @@
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import React, { useState, useEffect } from "react";
 import { db } from "../config/firebase";
 import STATE from "../enums/StateApplication";
+import AGE_RANGE from '../enums/AgeRange';
+import SHOW_TOAST from '../config/config';
 
 const UserInformation = (props) => {
+
     const initialStateValues = 
     {
       documentID : '',
@@ -11,9 +16,6 @@ const UserInformation = (props) => {
       name : ''
     };
 
-    var MIN_AGE = 30;
-    var MAX_AGE = 40;
-  
     const [values, setValues] = useState(initialStateValues);
     const [canEdit, setCanEdit] = useState(true);
 
@@ -24,15 +26,14 @@ const UserInformation = (props) => {
     const isInRangeAge = (strAge) => {
 
         var numberAge = parseInt(strAge);
-        var result =  ( MIN_AGE <= numberAge) && (numberAge <= MAX_AGE);
-        return result;  
-    
-      };
-    const isDocumentValid = (str) => {
-        return true;
-        /* validación del DNI */
-        var erdni=/(^([0-9]{8,8})|^)$/;
-        return erdni.test(str);  
+        var result =  ( AGE_RANGE.MIN_AGE  <= numberAge) && (numberAge <= AGE_RANGE.MAX_AGE);
+        return result;      
+    };
+    const onlyNumber = (str ) => {
+        
+        const hasOnlyNumbers = !(String(str).includes('.') || String(str).includes(','))
+        
+        return hasOnlyNumbers;
 
     };
 
@@ -52,21 +53,23 @@ const UserInformation = (props) => {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        window.scrollTo(0,0);
         if(values.age === "" || values.documentID === "" ){
-            alert("Ingrese información");
-            return;// toast("Ingrese datos", { type: "error", autoClose: TIME_POPUP_SHOW });
+            
+            toast("Ingrese información", { type: "error", autoClose: SHOW_TOAST.TIME });
+            return;
         }
         
-        if(!isInRangeAge(values.age)){
-            alert("Su rango de edad no esta disponible")
-            return;// toast("Su edad no esta en el rango", { type: "error", autoClose: TIME_POPUP_SHOW });
+        if(!onlyNumber(values.documentID)){            
+            toast("Por favor, ingrese un documento sin puntos ni comas.", { type: "error", autoClose: SHOW_TOAST.TIME  });
+            return;
         }
-    
-        if(!isDocumentValid(values.url)){
-            alert("Documento Invalido")
-            return;// toast("Su edad no esta en el rango", { type: "error", autoClose: TIME_POPUP_SHOW });
+
+        if(!onlyNumber(values.age)){
+            toast("Por favor, ingrese una edad sin puntos ni comas.", { type: "error", autoClose: SHOW_TOAST.TIME  });
+            return;
         }
+        
 
         if(canEdit === false){
             setCanEdit(true);
@@ -77,7 +80,15 @@ const UserInformation = (props) => {
         }else{
             setCanEdit(false);
         }
-        props.setInfoType(STATE.LOADING);
+
+        if(!isInRangeAge(values.age)){
+            props.setInfoType(STATE.WARNING_AGE)
+            return;
+        }else{
+            
+            props.setInfoType(STATE.LOADING);
+        }
+    
                   
         values.turnNumber  = await props.getTurnNumber(values.documentID);
         
@@ -122,7 +133,8 @@ const UserInformation = (props) => {
                 <div className="form-group">
                     <input 
                         disabled={!canEdit}
-                        type="text" 
+                        type="number" 
+                        required={true}
                         className="form-control register-input" 
                         value={values.age}
                         name="age"
@@ -133,7 +145,8 @@ const UserInformation = (props) => {
                 <div className="form-group">
                     <input  
                         disabled={!canEdit}
-                        type="text" 
+                        required={true}
+                        type="number" 
                         className="form-control register-input" 
                         placeholder="NÚMERO DE DOCUMENTO"
                         value={values.documentID}    

@@ -18,7 +18,7 @@ function ModalInfo() {
             <Modal.Title>Información importante</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            Antes de generar un turno para el programa de vacunación, usted deberá registrarse previamente en la página  
+            Antes de generar un turno para el programa de vacunación que se realiza en la ciudad de Federación, usted deberá registrarse previamente en la página  
              Vacunación Argentina haciendo <a href="https://vacunacion.argentina.gob.ar/vacunacion/inscripcion/AR-E">click acá</a>.
           </Modal.Body>
           <Modal.Footer>          

@@ -14,9 +14,9 @@ body{
   margin-bottom: 15px;
   font-weight: 700;
   color: #59c1ef;
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 2.3em;
 }
 .vaccination-logo{
 	width: inherit !important;
@@ -32,10 +32,8 @@ body{
 
   font-size: bold;
 }
-.panel-info img{
-  width: 4em !important;
-  height: 4em;
-  margin-bottom: 2em;
+.vaccine-logo {
+	width: inherit !important;
 }
 .panel-info h2{
   margin-bottom: 60px;
@@ -124,12 +122,6 @@ body{
 .copyright a:hover{
   color: #a1a1a1;
 }
-.panel-info img {
-  width: inherit;
-}
-
-
-
 
 
 /************************** media query 1200px ***********/
@@ -137,13 +129,19 @@ body{
 	.panel-info img{
 		padding-top: 85px;
 	}
+	.hq-template{
+		margin-top: 0;
+	}
 }
 /************************** media query 950px ***********/
 @media only screen and (max-width: 950px){
 	.panel-info img{
-		height: inherit;
+		height: auto;
 		width: inherit;
 		padding-top: 0px;
+	}
+	.hq-template{
+		margin-top: 0;
 	}
 	.register-login-btn .register-btn {
     margin-right: 5px;
@@ -151,7 +149,7 @@ body{
 }
 	.register-login-btn .login-btn {
 		font-size: 15px;
-    width: auto;
+    	width: auto;
 	}
 
 }
@@ -162,13 +160,23 @@ body{
 	}
 	.register-login-btn .register-btn{
 		margin: auto;
-    width: auto;
+    	width: auto;
+	}
+	.hq-template{
+		margin-top: 0;
 	}
 }
 /********************  media query 414px ***************/
 @media only screen and (max-width: 414px){
 	.register-form{
 		padding: 10px;
+		height: 100vh;
+	}
+	.panel-info{
+		height: 100vh;
+	}
+	.hq-template{
+		margin-top: 0;
 	}
 	
 }
