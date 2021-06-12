@@ -69,7 +69,7 @@ const ShiftDocument = (props) => (
   <Document>
   <Page style={styles.body}>
     <Text style={styles.header} fixed>
-      - Hospital San José -        
+      - Hospital San José | Federación, Entre Ríos-        
     </Text>
 
     <Text style={styles.title}>Sistema de Gestión de Turnos</Text>
@@ -77,7 +77,7 @@ const ShiftDocument = (props) => (
     <Text style={styles.shiftNumber}>Nº {props.turnNumber}</Text>
    
     <Text style={styles.text}>
-      Por favor presentarse con su documento para reespaldar la información ingresada. 
+      Por favor presentarse con su documento para respaldar la información ingresada. 
     </Text>
     <Text style={styles.text}>
       Respetar el distanciamiento social y llevar tapabocas.
