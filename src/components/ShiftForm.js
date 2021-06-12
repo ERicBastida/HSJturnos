@@ -38,12 +38,12 @@ const ShiftForm = () => {
             console.error(error);
         }
     };
-    
+
     const getRepeteadTurns = () => {
         const MIN = 901;
         const MAX = 1200;
 
-        db.collection(DB_ENV.TURN_DB)
+        db.collection("turns")
         .where("turnNumber", ">=",MIN)
         .where("turnNumber", "<=", MAX)
         .orderBy("turnNumber", "asc")

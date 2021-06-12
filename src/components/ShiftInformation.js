@@ -9,9 +9,7 @@ import AGE_RANGE from '../enums/AgeRange';
 import React from 'react';
 import { Ring } from 'react-awesome-spinners'
 
-// const Loading = ({ type, color }) => (
-// 	<ReactLoading type={type} color={color} height={667} width={375} />
-// );
+
 
 const VaccineLogo = {
     width : 'inherit'
