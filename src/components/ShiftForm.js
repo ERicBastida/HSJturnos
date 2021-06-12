@@ -38,6 +38,34 @@ const ShiftForm = () => {
             console.error(error);
         }
     };
+    
+    const getRepeteadTurns = () => {
+        const MIN = 901;
+        const MAX = 1200;
+
+        db.collection(DB_ENV.TURN_DB)
+        .where("turnNumber", ">=",MIN)
+        .where("turnNumber", "<=", MAX)
+        .orderBy("turnNumber", "asc")
+        .get()
+        .then((querySnapshot) => {
+
+            var countRepeted = 0;
+            var backTurn = -1;
+            querySnapshot.forEach((doc) => {
+                const userTurn = doc.data();
+                if(backTurn === userTurn.turnNumber){
+                    countRepeted = countRepeted + 1;
+                }else{
+                    backTurn = userTurn.turnNumber;
+                }
+            },this);
+            alert(`Los repetidos son entre los turnos [${MIN} - ${MAX}] son: ${countRepeted}`)
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        })
+    }
 
     useEffect(() => {
         setInfoType(STATE.INFO_HOSPITAL);
