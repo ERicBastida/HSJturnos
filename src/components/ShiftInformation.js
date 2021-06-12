@@ -74,7 +74,7 @@ const ShiftInformation = (props) => {
             <div className="col-lg-4 col-md-4 panel-info">
                 <h1>Hospital San José</h1>
                 <img  src={covidVaccineIMG} alt="Vacunación COVID-19" style={VaccineLogo} alt="Vacunación COVID"/>
-                <h2>PROGRAMA DE VACUNACION</h2>
+                <h2>PROGRAMA DE VACUNACIÓN</h2>
                 <h2>2021</h2>
             </div>)}
             { values === STATE.INFO_SHIFT  && (             
