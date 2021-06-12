@@ -76,17 +76,17 @@ body{
 .register-login-btn .register-btn{
 	border-radius: 5px;
 	background: #0d9500;
-  border-color: #0d9500;
+	border-color: #0d9500;
 	color: rgb(255, 255, 255) !important;
 	padding-left: 20px;
 	padding-right: 20px;
 	margin: auto;
-  font-weight: bold;
-  width: 8em;
-  
-  font-size: 1.5em;
-  text-align: center;
-  align-items: center;
+	font-weight: bold;
+	width: 8em;
+
+	font-size: 1.5em;
+	text-align: center;
+	align-items: center;
   
 }
 .register-login-btn .register-btn:focus{
