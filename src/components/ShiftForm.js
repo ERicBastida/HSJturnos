@@ -40,7 +40,7 @@ const ShiftForm = () => {
     };
 
     useEffect(() => {
-        setInfoType(STATE.INFO_HOSPITAL);
+        setInfoType(STATE.BLOCK_PAGE);
     }, []);
 
     return (
