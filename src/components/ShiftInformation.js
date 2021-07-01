@@ -28,6 +28,10 @@ const TextWarning = {
     marginButtom: '0.5em',
 
 }
+const TextBlockPage = {
+    marginButtom: '0.5em',
+    paddingTop: '3em'
+}
 
 const TextAgeWarning = {
     fontSize: '3em',
@@ -98,6 +102,11 @@ const ShiftInformation = (props) => {
                     <img className="print-btn" src={warningIMG} style={WarningLogo} alt="Atención"/>
                     <h2 style={TextWarning}>Por cuestiones de seguridad y aglomeración de personas, para esta oportunidad solo se aceptan personas en el rango de edad de</h2>
                     <h3 style={TextAgeWarning}>{AGE_RANGE.MIN_AGE} - {AGE_RANGE.MAX_AGE} años</h3>                
+            </div>)}
+            { values === STATE.BLOCK_PAGE  && (             
+            <div className="col-lg-4 col-md-4 panel-info">
+                    <img className="print-btn" src={warningIMG} style={WarningLogo} alt="Atención"/>
+                    <h2 style={TextBlockPage}>Se ha deshabilitado la generación de turnos hasta nuevo aviso. </h2>                    
             </div>)}
         </>
 

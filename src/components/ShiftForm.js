@@ -40,8 +40,8 @@ const ShiftForm = () => {
     };
 
     const getRepeteadTurns = () => {
-        const MIN = 901;
-        const MAX = 1200;
+        const MIN = 1;
+        const MAX = 50000;
 
         db.collection("turns")
         .where("turnNumber", ">=",MIN)
@@ -49,17 +49,21 @@ const ShiftForm = () => {
         .orderBy("turnNumber", "asc")
         .get()
         .then((querySnapshot) => {
-
+            var dataString = "";
             var countRepeted = 0;
             var backTurn = -1;
             querySnapshot.forEach((doc) => {
                 const userTurn = doc.data();
+                var data = `${userTurn.turnNumber}, ${doc.id}, ${userTurn.name}, ${userTurn.age}  \n `;
+                dataString = dataString + data;
                 if(backTurn === userTurn.turnNumber){
                     countRepeted = countRepeted + 1;
                 }else{
                     backTurn = userTurn.turnNumber;
                 }
+                console.log(data)                
             },this);
+            download("Informe.txt",dataString)
             alert(`Los repetidos son entre los turnos [${MIN} - ${MAX}] son: ${countRepeted}`)
         })
         .catch((error) => {
@@ -67,8 +71,19 @@ const ShiftForm = () => {
         })
     }
 
+    const download = (filename, text) =>{
+        var blob = new Blob([text], {type: "text/plain"});
+        var url = window.URL.createObjectURL(blob);
+        var a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        a.click();
+      }
+      
+      
+
     useEffect(() => {
-        setInfoType(STATE.INFO_HOSPITAL);
+        setInfoType(STATE.BLOCK_PAGE);
     }, []);
 
     return (
@@ -84,6 +99,7 @@ const ShiftForm = () => {
                 <br/>
             </div> 
             <ModalInfo></ModalInfo>
+            {/* <button onClick= {getRepeteadTurns}></button> */}
         </div>
     )
 }
