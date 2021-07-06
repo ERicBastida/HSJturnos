@@ -104,9 +104,7 @@ const ShiftInformation = (props) => {
             { values === STATE.BLOCK_PAGE  && (             
             <div className="col-lg-4 col-md-4 panel-info">
                     <img className="print-btn" src={warningIMG} style={WarningLogo} alt="Atención"/>
-                    <br/>
-                    <h2 style={TextBlockPage}>Sin turnos disponibles para generar momentaneamente.</h2>
-          
+                    <h2 style={TextBlockPage}>Se ha deshabilitado la generación de turnos hasta nuevo aviso. </h2>                    
             </div>)}
         </>
 
