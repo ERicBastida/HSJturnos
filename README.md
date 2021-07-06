@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Aplicación de gestion de turnos
+
+Programa creado para gestionar los turnos de vacunación que fueron entregados en la ciudad de Federación Entre Ríos, en medio de una situación pandemica para evitar el aglomeramiento de personas y la propagación del virus.
+
+![Alt text](app.PNG?raw=true "Title")
+
+Aplicación desarrollada utilizando React + Firebase
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
