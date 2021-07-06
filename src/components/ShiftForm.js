@@ -40,8 +40,8 @@ const ShiftForm = () => {
     };
 
     const getRepeteadTurns = () => {
-        const MIN = 901;
-        const MAX = 1200;
+        const MIN = 0;
+        const MAX = 5000;
 
         db.collection("turns")
         .where("turnNumber", ">=",MIN)
@@ -68,7 +68,7 @@ const ShiftForm = () => {
     }
 
     useEffect(() => {
-        setInfoType(STATE.BLOCK_PAGE);
+        setInfoType(STATE.INFO_HOSPITAL);
     }, []);
 
     return (
@@ -84,6 +84,7 @@ const ShiftForm = () => {
                 <br/>
             </div> 
             <ModalInfo></ModalInfo>
+            {/* <button onClick={() => getRepeteadTurns()}></button> */}
         </div>
     )
 }
